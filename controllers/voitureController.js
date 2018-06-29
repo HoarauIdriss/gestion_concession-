@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
-var Voiture = require("../models/Voiture");
+var Voiture = require("../models/voiture");
 
 var voitureController = {};
 
 
-//Liste les voitures
+//Lister les voitures et les affiche dans l'index du Back office
 voitureController.list = function(req, res) {
     Voiture.find({}).exec(function(err, voitures){
         if(err){
@@ -16,23 +16,23 @@ voitureController.list = function(req, res) {
     });
 };
 
-//Affiche 1 voiture par son id
+//Affiche une voiture par rapport à son ID
 voitureController.show = function(req, res) {
     Voiture.findOne({_id:req.params.id}).exec(function(err, voiture){
         if(err){
             console.log('Error : ', err);
         }else{
-            res.render("../views/voiture/show",{voiture:voiture});
+            res.render("../views/voiture",{voiture:voiture});
         } 
     });
 };
 
-//redirection à la page de creation de voiture
+//Redirection vers la page de creation d'une voiture
 voitureController.create = function(req, res){
     res.render("../views/voiture/create");
 }; 
 
-//enregistrement des voitures
+//Enregistrement d'une voiture
 voitureController.save = function(req, res){
     var voiture = new Voiture(req.body);
 
@@ -42,12 +42,12 @@ voitureController.save = function(req, res){
             res.render("../views/voiture/create");
         } else{
             console.log("creation voiture OK");
-            res.redirect("/voitures/show/" + voiture._id);
+            res.redirect("/voitures/index/" + voiture._id);
         } 
     });
 };
 
-//edition d'un voiture par son id
+//Edition d'un voiture par son id
 voitureController.edit = function(req, res){
     var voiture = new Voiture(req.body);
 
@@ -60,7 +60,7 @@ voitureController.edit = function(req, res){
     });
 };
 
-//gestion de l'edition d'une voiture
+//Gestion de l'edition dun voiture
 voitureController.update = function(req, res){
     Voiture.findByIdAndUpdate(req.params.id,{ $set :{nom: req.body.nom, prix: req.body.prix} },{new: true}, function (err, voiture){
 
@@ -68,10 +68,10 @@ voitureController.update = function(req, res){
             console.log(err);
             res.render("../views/voiture/edit",{voiture:req.body} );
         } 
-        res.redirect("/voitures/show/" + voiture._id);
+        res.redirect("/voitures/index/" + voiture._id);
         
     });
 };
 
-//export du module
+//Export du module
 module.exports = voitureController;
