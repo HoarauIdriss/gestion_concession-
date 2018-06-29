@@ -10,7 +10,7 @@ var VoitureSchema = new mongoose.Schema({
     couleur: String,
     portes: Number,
     places: Number,
-    actif: Boolean
+    actif: String
 });
 
 module.exports = mongoose.model("voitures", VoitureSchema);

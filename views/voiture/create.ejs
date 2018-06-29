@@ -1,14 +1,13 @@
 <% include ../partials/head.ejs %>
 <body>
-    <h1>Liste des voitures</h1>
     <div class="container">
-   <form action="/voitures/save" method="POST">
+    <form action="/voitures/save" method="POST">
        <div class="form-group mt-2">
-        <label for="">Admin</label>
+       <h1 for="">Editer des voitures</h1>
         <input type="text" class="form-control mt-2" name="marque" value="" id="marque" aria-describedby="" placeholder="Marque">
-        <input type="text" class="form-control mt-2" name="modele" value="" id="modele" aria-describedby="" placeholder="Modèle">
+        <input type="text" class="form-control mt-2" name="modele" value="" id="modele" aria-describedby="" placeholder="Modele">
         <input type="text" class="form-control mt-2" name="image" value="" id="image" aria-describedby="" placeholder="Image">
-        <input type="text" class="form-control mt-2" name="puissance " value="" id="puissance " aria-describedby="" placeholder="Puissance ">
+        <input type="text" class="form-control mt-2" name="puissance" value="" id="puissance" aria-describedby="" placeholder="Puissance ">
         <input type="text" class="form-control mt-2" name="motorisation" value="" id="motorisation" aria-describedby="" placeholder="Motorisation">
         <input type="number" class="form-control mt-2" name="prix" value="" id="prix" aria-describedby="" placeholder="Prix">
         <input type="text" class="form-control mt-2" name="couleur" value="" id="couleur" aria-describedby="" placeholder="Couleur">
@@ -18,7 +17,7 @@
         <input type="checkbox" name="actif" id="actif" checked>
       </div>
       <button type="submit" class="btn btn-primary">Ajouter</button>
-   </form>
-</div>
+    </form>
+    </div>
     <% include ../partials/footer.ejs %>
 </body>

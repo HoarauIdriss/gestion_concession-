@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include ../partials/head.ejs %>
+<body>
+  <div class="container">
+    <form action="/voitures/save" method="POST">
+      <div class="form-group mt-2">
+        <h1 for="">Editer des voitures</h1>
+        <input type="text" class="form-control mt-2" name="marque" value="<%= voiture.marque %>" id="marque" aria-describedby="" placeholder="Marque">
+        <input type="text" class="form-control mt-2" name="modele" value="<%= voiture.modele %>" id="modele" aria-describedby="" placeholder="Modèle">
+        <input type="text" class="form-control mt-2" name="image" value="<%= voiture.image %>" id="image" aria-describedby="" placeholder="Image">
+        <input type="text" class="form-control mt-2" name="puissance" value="<%= voiture.puissance %>" id="puissance" aria-describedby="" placeholder="Puissance">
+        <input type="text" class="form-control mt-2" name="motorisation" value="<%= voiture.motorisation %>" id="motorisation" aria-describedby="" placeholder="Motorisation">
+        <input type="number" class="form-control mt-2" name="prix" value="<%= voiture.prix %>" id="prix" aria-describedby="" placeholder="Prix">
+        <input type="text" class="form-control mt-2" name="couleur" value="<%= voiture.couleur %>" id="couleur" aria-describedby="" placeholder="Couleur">
+        <input type="number" class="form-control mt-2" name="portes" value="<%= voiture.portes %>" id="portes" aria-describedby="" placeholder="Nombre de portes">
+        <input type="number" class="form-control mt-2" name="places" value="<%= voiture.places %>" id="places" aria-describedby="" placeholder="Nombre de places">
+        <label for="actif">Actif = <%= voiture.actif %></label>        
+        <input type="checkbox" name="actif" id="actif" <% if (voiture.actif="on") { %> checked <% } %>>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+  </div>
+    <% include ../partials/footer.ejs %>
+</body>
