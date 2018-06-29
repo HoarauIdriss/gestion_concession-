@@ -1,13 +1,13 @@
-<% include ./partials/head.ejs %>
+<% include ../partials/head.ejs %>
 <body>
     <h1>Liste des voitures</h1>
     <ul>
       <% voitures.forEach(function(voiture){ %>
         <li data-id="<%= datas.id %>" class="test">
-  
-          <%= voiture.Marque %>
+
+          <%= voiture.marque %>
         </li>
       <% }); %>
     </ul>       
-    <% include ./partials/footer.ejs %>
+    <% include ../partials/footer.ejs %>
 </body>
