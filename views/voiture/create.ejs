@@ -1,8 +1,24 @@
 <% include ../partials/head.ejs %>
 <body>
     <h1>Liste des voitures</h1>
-   <form>
-       <input type="" name="" value="">
+    <div class="container">
+   <form action="/voitures/save" method="POST">
+       <div class="form-group mt-2">
+        <label for="">Admin</label>
+        <input type="text" class="form-control mt-2" name="marque" value="" id="marque" aria-describedby="" placeholder="Marque">
+        <input type="text" class="form-control mt-2" name="modele" value="" id="modele" aria-describedby="" placeholder="Modèle">
+        <input type="text" class="form-control mt-2" name="image" value="" id="image" aria-describedby="" placeholder="Image">
+        <input type="text" class="form-control mt-2" name="puissance " value="" id="puissance " aria-describedby="" placeholder="Puissance ">
+        <input type="text" class="form-control mt-2" name="motorisation" value="" id="motorisation" aria-describedby="" placeholder="Motorisation">
+        <input type="number" class="form-control mt-2" name="prix" value="" id="prix" aria-describedby="" placeholder="Prix">
+        <input type="text" class="form-control mt-2" name="couleur" value="" id="couleur" aria-describedby="" placeholder="Couleur">
+        <input type="number" class="form-control mt-2" name="portes" value="" id="portes" aria-describedby="" placeholder="Nombre de portes">
+        <input type="number" class="form-control mt-2" name="places" value="" id="places" aria-describedby="" placeholder="Nombre de places">
+        <label for="actif">Actif</label>
+        <input type="checkbox" name="actif" id="actif" checked>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
    </form>
+</div>
     <% include ../partials/footer.ejs %>
 </body>

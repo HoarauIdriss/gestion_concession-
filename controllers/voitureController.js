@@ -42,7 +42,7 @@ voitureController.save = function(req, res){
             res.render("../views/voiture/create");
         } else{
             console.log("creation voiture OK");
-            res.redirect("/voitures/index/" + voiture._id);
+            res.redirect("/voitures");
         } 
     });
 };
