@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var VoitureSchema = new mongoose.Schema({
-    marques: String,
+    marque: String,
     modele: String,
     image: String,
     puissance: String,
