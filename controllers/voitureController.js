@@ -60,7 +60,7 @@ voitureController.edit = function(req, res){
     });
 };
 
-//gestion de l'edition dun voiture
+//gestion de l'edition d'une voiture
 voitureController.update = function(req, res){
     Voiture.findByIdAndUpdate(req.params.id,{ $set :{nom: req.body.nom, prix: req.body.prix} },{new: true}, function (err, voiture){
 
