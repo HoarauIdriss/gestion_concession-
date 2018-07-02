@@ -14,19 +14,19 @@ router.get("/show/:id", voiture.show);
 
 //cree une voiture
 //Afficher une page pour ajouter un voiture
-router.get("/create", voiture.create);
+router.get("admin/create", voiture.create);
 
 //sauvegarder une voiture. /!\ cest un POST 
 //Ajouter une voiture dans la Collection
-router.post("/save", voiture.save);
+router.post("admin/save", voiture.save);
 
 //editer une voiture
 //Afficher une page pour éditer un voiture
-router.get("/edit/:id", voiture.edit);
+router.get("admin/edit/:id", voiture.edit);
 
 //edit update.  /!\ cest un POST 
 //Mettre à jour une voiture de la Collection
-router.post("/update/:id", voiture.update);
+router.post("admin/update/:id", voiture.update);
 
 
 //export du module router

@@ -7,8 +7,8 @@ router.get('/', voiture.listaccueil )
 
 
 
-/*Route page description*/
-router.get("/voiture/:id", voiture.show);
+// /*Route page description*/
+// router.get("/voitures/show/:id", voiture.show);
 
 
 module.exports = router;
