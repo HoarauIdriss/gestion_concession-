@@ -5,16 +5,9 @@ var Voiture = require("../models/voiture");
 var voitureController = {};
 
 
-//Lister les voitures et les affiche dans l'index du Back office
-voitureController.list = function(req, res) {
-    Voiture.find({}).exec(function(err, voitures){
-        if(err){
-            console.log('Error : ', err);
-        }else{
-            res.render("../views/voiture/index",{voitures:voitures} );
-        } 
-    });
-};
+//----------------------
+// PARTIE FRONT
+//----------------------
 
 //Lister les voitures et les affiche dans la page d'accueil
 voitureController.listaccueil = function(req, res) {
@@ -40,9 +33,23 @@ voitureController.show = function(req, res) {
     });
 };
 
+//----------------------
+// PARTIE BACK
+//----------------------
+
+//Lister les voitures et les affiche dans l'index du Back office
+voitureController.list = function(req, res) {
+    Voiture.find({}).exec(function(err, voitures){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("../views/voiture/admin/index",{voitures:voitures} );
+        } 
+    });
+};
 //Redirection vers la page de creation d'une voiture
 voitureController.create = function(req, res){
-    res.render("../views/voiture/create");
+    res.render("../views/voiture/admin/create");
 }; 
 
 //Enregistrement d'une voiture
@@ -52,7 +59,7 @@ voitureController.save = function(req, res){
     voiture.save(function(err){
         if(err){
             console.log(err);
-            res.render("../views/voiture/create");
+            res.render("../views/voiture/admin/create");
         } else{
             console.log("creation voiture OK");
             res.redirect("/voitures");
@@ -68,7 +75,7 @@ voitureController.edit = function(req, res){
         if(err){
             console.log("Error ", err);
         } else{
-            res.render("../views/voiture/edit",{voiture: voiture} );
+            res.render("../views/voiture/admin/edit",{voiture: voiture} );
         } 
     });
 };
@@ -79,9 +86,9 @@ voitureController.update = function(req, res){
 
         if (err){
             console.log(err);
-            res.render("../views/voiture/edit",{voiture:req.body} );
+            res.render("../views/voiture/admin/edit",{voiture:req.body} );
         } 
-        res.redirect("/voitures/index/" + voiture._id);
+        res.redirect("/voitures/admin");
         
     });
 };

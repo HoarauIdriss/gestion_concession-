@@ -1,4 +1,4 @@
-<% include ../partials/head.ejs %>
+<% include ../../partials/head.ejs %>
 
   <body>
     <!--pour le lien "a", contient le lien vers la page "create"-->
@@ -34,13 +34,13 @@
             <td><%= voiture.places %></td>
             <td><%= voiture.actif %></td>
             <!--bouton qui édite dans la derniere colonne-->
-            <td><a type="button" href="/voitures/edit/<%= voiture._id%>" class="btn btn-outline-light">Editer</a> </td>
+            <td><a type="button" href="/voitures/admin/edit/<%= voiture._id%>" class="btn btn-outline-light">Editer</a> </td>
           </tr>
         <% }); %>
 
       </tbody>
     </table>
   
-    <% include ../partials/footer.ejs %>
+    <% include ../../partials/footer.ejs %>
   
   </body>
