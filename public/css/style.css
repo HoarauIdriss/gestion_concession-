@@ -14,3 +14,8 @@ h5 {
 h1 {
   text-transform: uppercase;
 }
+
+
+.img-fluid {
+  height: 200px !important;
+}
