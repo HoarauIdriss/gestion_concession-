@@ -24,8 +24,8 @@
             <!--liste du tableau-->
             <td scope="row"><%= voiture.marque %></td>
             <!--pour le lien "a", contient le lien vers la page "edit"-->
-            <td><%= voiture.modele %> <a type="button" href="/voitures/edit/<%= voiture._id%>" class="btn btn-outline-dark">Editer</a> </td>           
-            <td><%= voiture.image %></td>
+            <td><%= voiture.modele %></td>           
+            <td><img src="<%= voiture.image %>" alt="" width="42" height="42"></td>
             <td><%= voiture.puissance %></td>
             <td><%= voiture.motorisation %></td>
             <td><%= voiture.prix %></td>
@@ -33,6 +33,8 @@
             <td><%= voiture.portes %></td>
             <td><%= voiture.places %></td>
             <td><%= voiture.actif %></td>
+            <!--bouton qui édite dans la derniere colonne-->
+            <td><a type="button" href="/voitures/edit/<%= voiture._id%>" class="btn btn-outline-light">Editer</a> </td>
           </tr>
         <% }); %>
 
