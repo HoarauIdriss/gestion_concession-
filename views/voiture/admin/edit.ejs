@@ -1,5 +1,4 @@
 <% include ../../partials/head.ejs %>
-
   <div class="container">
     <form action="/voitures/admin/update/<%= voiture._id %>" method="POST" class="needs-validation" novalidate>
       <div class="form-group mt-2">
@@ -47,8 +46,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Editer</button>
     </form>
-  </div>
-    <% include ../../partials/footer.ejs %><script>
+  </div><script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
@@ -68,3 +66,4 @@
       }, false);
     })();
     </script>
+    <% include ../../partials/footer.ejs %>
