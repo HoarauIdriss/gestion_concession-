@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+    <% include partials/head.ejs %>
+  <title>
+    <%=  %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1 class="text-center p-5"> Accueil</h1>
+  <div class="container">
+      <div class="row">
+          <% voitures.forEach(function(voiture){ %>
+          <div class="col-md-4 pb-3 pt-3">
+              <div class="card" style="width: 18rem;">
+                  <img src="<%= voiture.image %>" class="card-img-top img-fluid">
+
+                  <div class="card-body text-center">
+                      <h5 class="font-weight-bold"><%=voiture.marque %></h5>
+                      <div class="row justify-content-center">
+                          <%=voiture.prix %> EUR
+                      </div>
+          
+                      <a href="" ><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= voiture._id %>" data-id="" > Voir plus</button></a>
+                      
+                    </div>
+                </div>
+                </div>
+            
+  <% }); %>
+     
+</div>
+</body>
+
 </html>

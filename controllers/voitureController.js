@@ -16,6 +16,29 @@ voitureController.list = function(req, res) {
     });
 };
 
+//Lister les voitures et les affiche dans la page d'accueil
+voitureController.listaccueil = function(req, res) {
+    Voiture.find({}).exec(function(err, voitures){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("index",{voitures:voitures} );
+        } 
+    });
+};
+
+//affiche le descriptif selon les voitures
+voitureController.listaccueil = function(req, res) {
+    Voiture.find({}).exec(function(err, voitures){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("index",{voitures:voitures} );
+        } 
+    });
+};
+
+
 //Affiche une voiture par rapport à son ID
 voitureController.show = function(req, res) {
     Voiture.findOne({_id:req.params.id}).exec(function(err, voiture){
