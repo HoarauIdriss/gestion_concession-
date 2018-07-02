@@ -1,7 +1,7 @@
 <% include ../partials/head.ejs %>
 
   <body>
-    <h1>Liste des voitures</h1>
+    <h1>Liste des voitures <button type="button" class="btn btn-outline-dark">Ajouter</button></h1>
     <table class="table table-striped table-dark">
       <thead>
         <tr>
@@ -21,7 +21,7 @@
         <% voitures.forEach(function(voiture){ %>
           <tr>
             <td scope="row"><%= voiture.marque %></td>
-            <td><%= voiture.modele %></td>           
+            <td><%= voiture.modele %> <button type="button" class="btn btn-outline-dark">Editer</button></td>           
             <td><%= voiture.image %></td>
             <td><%= voiture.puissance %></td>
             <td><%= voiture.motorisation %></td>
