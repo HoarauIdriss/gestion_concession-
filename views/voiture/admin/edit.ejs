@@ -1,23 +1,68 @@
 <% include ../../partials/head.ejs %>
-<body>
+
   <div class="container">
-    <form action="/voitures/admin/update/<%= voiture._id %>" method="POST">
+    <form action="/voitures/admin/update/<%= voiture._id %>" method="POST" class="needs-validation" novalidate>
       <div class="form-group mt-2">
-        <h1 for="">Editer des voitures</h1>
-        <input type="text" class="form-control mt-2" name="marque" value="<%= voiture.marque %>" id="marque" aria-describedby="" placeholder="Marque">
-        <input type="text" class="form-control mt-2" name="modele" value="<%= voiture.modele %>" id="modele" aria-describedby="" placeholder="Modèle">
-        <input type="text" class="form-control mt-2" name="image" value="<%= voiture.image %>" id="image" aria-describedby="" placeholder="Image">
-        <input type="text" class="form-control mt-2" name="puissance" value="<%= voiture.puissance %>" id="puissance" aria-describedby="" placeholder="Puissance">
-        <input type="text" class="form-control mt-2" name="motorisation" value="<%= voiture.motorisation %>" id="motorisation" aria-describedby="" placeholder="Motorisation">
-        <input type="number" class="form-control mt-2" name="prix" value="<%= voiture.prix %>" id="prix" aria-describedby="" placeholder="Prix">
-        <input type="text" class="form-control mt-2" name="couleur" value="<%= voiture.couleur %>" id="couleur" aria-describedby="" placeholder="Couleur">
-        <input type="number" class="form-control mt-2" name="portes" value="<%= voiture.portes %>" id="portes" aria-describedby="" placeholder="Nombre de portes">
-        <input type="number" class="form-control mt-2" name="places" value="<%= voiture.places %>" id="places" aria-describedby="" placeholder="Nombre de places">
+        <h1 for="">Editer une voiture</h1>
+        <input type="text" class="form-control mt-2" name="marque" value="<%= voiture.marque %>" id="marque" aria-describedby="" placeholder="Marque" required>
+        <div class="invalid-feedback">
+          ajouter une marque
+        </div>
+        <input type="text" class="form-control mt-2" name="modele" value="<%= voiture.modele %>" id="modele" aria-describedby="" placeholder="Modèle" required>
+        <div class="invalid-feedback">
+          ajouter un modèle
+        </div>
+        <input type="text" class="form-control mt-2" name="image" value="<%= voiture.image %>" id="image" aria-describedby="" placeholder="Image" required>
+        <div class="invalid-feedback">
+          ajouter le lien vers l'image
+        </div>
+        <input type="text" class="form-control mt-2" name="puissance" value="<%= voiture.puissance %>" id="puissance" aria-describedby="" placeholder="Puissance" required>
+        <div class="invalid-feedback">
+          ajouter la puissance
+        </div>
+        <input type="text" class="form-control mt-2" name="motorisation" value="<%= voiture.motorisation %>" id="motorisation" aria-describedby="" placeholder="Motorisation" required>
+        <div class="invalid-feedback">
+          ajouter une motorisation
+        </div>
+        <input type="number" class="form-control mt-2" name="prix" value="<%= voiture.prix %>" id="prix" aria-describedby="" placeholder="Prix" required>
+        <div class="invalid-feedback">
+          ajouter un prix
+        </div>
+        <input type="text" class="form-control mt-2" name="couleur" value="<%= voiture.couleur %>" id="couleur" aria-describedby="" placeholder="Couleur"required>
+        <div class="invalid-feedback">
+          ajouter une couleur
+        </div>
+        <input type="number" class="form-control mt-2" name="portes" value="<%= voiture.portes %>" id="portes" aria-describedby="" placeholder="Nombre de portes" required>
+        <div class="invalid-feedback">
+          ajouter le nombre de portes
+        </div>
+        <input type="number" class="form-control mt-2" name="places" value="<%= voiture.places %>" id="places" aria-describedby="" placeholder="Nombre de places" required>
+        <div class="invalid-feedback">
+          ajouter le nombre de places
+        </div>
         <label for="actif">Actif = <%= voiture.actif %></label>        
         <input type="checkbox" name="actif" id="actif" <% if (voiture.actif="on") { %> checked <% } %>>
       </div>
       <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
   </div>
-    <% include ../../partials/footer.ejs %>
-</body>
+    <% include ../../partials/footer.ejs %><script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
