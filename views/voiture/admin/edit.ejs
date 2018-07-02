@@ -1,6 +1,6 @@
 <% include ../../partials/head.ejs %>
-<header> <% include ../../partials/header.ejs %></header>
   <div class="container">
+  <a href="/voitures/admin"  class="btn btn-dark mt-5">Accueil administration</a>
     <form action="/voitures/admin/update/<%= voiture._id %>" method="POST" class="needs-validation" novalidate>
       <div class="form-group mt-2">
         <h1 for="">Editer une voiture</h1>
