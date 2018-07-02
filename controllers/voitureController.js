@@ -82,7 +82,17 @@ voitureController.edit = function(req, res){
 
 //Gestion de l'edition dun voiture
 voitureController.update = function(req, res){
-    Voiture.findByIdAndUpdate(req.params.id,{ $set :{nom: req.body.nom, prix: req.body.prix} },{new: true}, function (err, voiture){
+    Voiture.findByIdAndUpdate(req.params.id,{ $set :{
+        marque: req.body.marque, 
+        modele: req.body.modele, 
+        image: req.body.image, 
+        puissance: req.body.puissance, 
+        motorisation: req.body.motorisation, 
+        prix: req.body.prix, 
+        couleur: req.body.couleur, 
+        portes: req.body.portes, 
+        places: req.body.places, 
+        actif: req.body.actif} },{new: true}, function (err, voiture){
 
         if (err){
             console.log(err);
