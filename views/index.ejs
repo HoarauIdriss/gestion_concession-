@@ -9,9 +9,11 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
-<body>
+<body class="bg-dark"> 
+    <div class="container bg-light">
+        <a  type="button" href="voitures/admin/"  class="btn btn-dark"> Admin</a>
   <h1 class="text-center p-5"> Accueil</h1>
-  <div class="container">
+  
       <div class="row">
           <% voitures.forEach(function(voiture){ %>
           <div class="col-md-4 pb-3 pt-3">
