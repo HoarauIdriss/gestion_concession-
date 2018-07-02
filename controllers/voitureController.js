@@ -62,7 +62,7 @@ voitureController.save = function(req, res){
             res.render("../views/voiture/admin/create");
         } else{
             console.log("creation voiture OK");
-            res.redirect("/voitures");
+            res.redirect("/voitures/admin");
         } 
     });
 };
