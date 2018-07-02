@@ -18,6 +18,7 @@
   
       <div class="row">
           <% voitures.forEach(function(voiture){ %>
+            <% if (voiture.actif === "on"){%> 
           <div class="col-md-4 pb-3 pt-3">
               <div class="card" style="width: 18rem;">
                   <img src="<%= voiture.image %>" class="card-img-top img-fluid">
@@ -30,8 +31,9 @@
                       <a href="voitures/show/<%= voiture._id %> "  class="btn btn-primary">Voir plus</a>
                       
                     </div>
+                </div> 
                 </div>
-                </div>
+                <% } %>
             
   <% }); %>
      
