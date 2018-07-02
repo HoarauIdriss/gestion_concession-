@@ -1,13 +1,13 @@
 <% include ../../partials/head.ejs %>
-<header> <% include ../../partials/header.ejs %></header>
+ <% include ../../partials/header.ejs %>
     <!--pour le lien "a", contient le lien vers la page "create"-->
     <h1 class="text-center pb-5">Liste des voitures </h1>
     
     <!-- NE PAS AJOUTER DE type="button" sur un a quand il y a bootstrap de charger -->
     <!-- Il génère une difference entre chrome et firefox -->
     <p><a href="/voitures/admin/create" class="btn btn-outline-dark btn-block py-3">Ajouter</a></p>
-    <table class="table table-striped table-dark">
-      <thead>
+    <table class="table table-striped table-light">
+      <thead class="table-dark">
         <tr>
           <th scope="col">marque</th>
           <th scope="col">modele</th>
@@ -19,6 +19,7 @@
           <th scope="col">nombre de portes</th>
           <th scope="col">nombre de places</th>
           <th scope="col">actif</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -42,7 +43,7 @@
               <% } %>
             </td>
             <!--bouton qui édite dans la derniere colonne-->
-            <td><a href="/voitures/admin/edit/<%= voiture._id%>" class="btn btn-outline-light">Editer</a> </td>
+            <td><a href="/voitures/admin/edit/<%= voiture._id%>" class="btn btn-outline-dark">Editer</a> </td>
           </tr>
         <% }); %>
 
