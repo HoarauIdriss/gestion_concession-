@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+ /*format uppercase sur les gros titres*/
+h5 {
+  text-transform: uppercase;
+}
+h1 {
+  text-transform: uppercase;
+}
