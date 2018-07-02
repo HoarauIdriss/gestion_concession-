@@ -1,7 +1,7 @@
-<% include ../partials/head.ejs %>
+<% include ../../partials/head.ejs %>
 <body>
     <div class="container">
-    <form action="/voitures/save" method="POST">
+    <form action="/voitures/admin/save" method="POST">
        <div class="form-group mt-2">
        <h1 for="">Editer des voitures</h1>
         <input type="text" class="form-control mt-2" name="marque" value="" id="marque" aria-describedby="" placeholder="Marque">
@@ -19,5 +19,5 @@
       <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
     </div>
-    <% include ../partials/footer.ejs %>
+    <% include ../../partials/footer.ejs %>
 </body>
