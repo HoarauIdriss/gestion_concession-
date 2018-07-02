@@ -6,12 +6,14 @@
   <title>
     <%=  %>
   </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/css/style.css' />
 </head>
 
 <body class="bg-dark"> 
     <div class="container bg-light">
-        <a  type="button" href="voitures/admin/"  class="btn btn-dark"> Admin</a>
+    <!-- NE PAS AJOUTER DE type="button" sur un a quand il y a bootstrap de charger -->
+    <!-- Il génère une difference entre chrome et firefox -->
+        <a href="voitures/admin/"  class="btn btn-dark"> Admin</a>
   <h1 class="text-center p-5"> Accueil</h1>
   
       <div class="row">
@@ -25,8 +27,7 @@
                       <div class="row justify-content-center">
                           <%=voiture.prix %> EUR
                       </div>
-          
-                      <a  type="button" href="voitures/show/<%= voiture._id %> "  class="btn btn-primary">Voir plus</a>
+                      <a href="voitures/show/<%= voiture._id %> "  class="btn btn-primary">Voir plus</a>
                       
                     </div>
                 </div>
