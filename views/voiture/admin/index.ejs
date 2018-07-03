@@ -28,8 +28,8 @@
             <!--liste du tableau-->
             <td scope="row"><%= voiture.marque %></td>
             <!--pour le lien "a", contient le lien vers la page "edit"-->
-            <td><%= voiture.modele %></td>           
-            <td><img class="rounded" src="<%= voiture.image %>" alt="" width="42" height="42"></td>
+            <td><%= voiture.modele %></td> 
+            <td><img class="rounded" src= "/img/<%= voiture.image %>" alt="" width="42" height="42"></td>
             <td><%= voiture.puissance %></td>
             <td><%= voiture.motorisation %></td>
             <td><%= voiture.prix %> €</td>

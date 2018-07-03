@@ -8,9 +8,7 @@ var storage = multer.diskStorage({
       cb(null, __dirname + "/../public/img/")
     },
     filename: function (req, file, cb) {
-      let extArray = file.mimetype.split("/");
-      let extension = extArray[extArray.length - 1];
-      console.log(file.mimetype);
+      //  console.log(file.mimetype);
       cb(null, file.originalname)
     }
   });
@@ -34,7 +32,7 @@ router.get("/admin/create", voiture.create);
 
 //sauvegarder une voiture. /!\ cest un POST 
 //Ajouter une voiture dans la Collection
-router.post("/admin/save",upload.single('image'), voiture.save);
+router.post("/admin/save", upload.single('file-image'), voiture.save);
 
 //editer une voiture
 //Afficher une page pour éditer un voiture
@@ -42,7 +40,7 @@ router.get("/admin/edit/:id", voiture.edit);
 
 //edit update.  /!\ cest un POST 
 //Mettre à jour une voiture de la Collection
-router.post("/admin/update/:id", voiture.update);
+router.post("/admin/update/:id", upload.single('file-image'),  voiture.update);
 
 
 //export du module router

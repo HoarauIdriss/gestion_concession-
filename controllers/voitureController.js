@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var express = require('express');
 
 var Voiture = require("../models/voiture");
 
@@ -77,6 +78,7 @@ voitureController.create = function (req, res) {
 //Enregistrement d'une voiture
 //------------------------------
 voitureController.save = function (req, res) {
+    console.log(req.body);
     var voiture = new Voiture(req.body);
     var info = [req.body.marque, 
         req.body.modele, 
@@ -93,7 +95,7 @@ voitureController.save = function (req, res) {
 
     var verif= verifChampsVide(info)
      
-    
+    res.redirect("/voitures/admin");
         if (verif == true){ 
 
             voiture.save(function (err) {
@@ -137,7 +139,8 @@ voitureController.edit = function (req, res) {
 //Gestion de l'edition dun voiture
 //--------------------------------------
 
-voitureController.update = function (req, res) {
+voitureController.update = async function (req, res) {
+    console.log(req.body);
     Voiture.findByIdAndUpdate(req.params.id, {
         $set: {
             marque: req.body.marque,
