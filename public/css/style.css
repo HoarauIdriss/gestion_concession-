@@ -43,5 +43,23 @@ width:30%;
   border-bottom: 5px darkred solid;
 }
 
+.image{
+  position: relative;
+  top: 92px;
+  left: 150px;
+}
+
+#note{
+  position: absolute;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  line-height: 1;
+  font-weight: normal;
+  width: 97px;
+  height: 41px;
+  font-size: 43px;
+  top: 61px;
+  left: 137px;
+}
 
 
