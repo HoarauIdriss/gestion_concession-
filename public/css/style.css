@@ -45,6 +45,15 @@ background-color: black;
 border-top: 5px darkred solid;
 
 }
+.border-red{
+  border: 5px rgb(82, 23, 23) solid;
+  
+  }
+
+  .border-bt-grey{
+    border-bottom: 5px rgb(53, 51, 51) solid;
+    
+    }
 .border-bottom-red{
 width:30%;
   border-bottom: 5px darkred solid;
@@ -70,3 +79,7 @@ width:30%;
 }
 
 
+header{
+background-image: url("/img/speed-1249610_1920.jpg");
+height: 200px;
+}
