@@ -1,6 +1,6 @@
 <% include ../../partials/head.ejs %>
-<div class="container-fluid bg-dark">
-  <div class="container bg-light p-5">
+<div class="container-fluid bg-dark p-5">
+  <div class="container bg-light mb-5 border-top-red ">
   <a href="/voitures/admin"  class="btn btn-dark my-3 ">Accueil administration</a>
     <form action="/voitures/admin/update/<%= voiture._id %>" method="POST" class="needs-validation bg-light p-5" novalidate>
       <div class="form-group mt-2">
