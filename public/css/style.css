@@ -5,6 +5,7 @@ body {
 
 a {
   color: #00B7FF;
+  text-transform: uppercase;
 }
 
  /*format uppercase sur les gros titres*/
@@ -12,7 +13,8 @@ h5 {
   text-transform: uppercase;
 }
 h1 {
-  text-transform: uppercase;
+  text-transform: uppercase; 
+  
 }
 
 
@@ -28,6 +30,14 @@ h1 {
 .color-grey{
   color: lightgray;
 }
+
+.bg-grey{
+  background-color: lightgray;
+}
+.color-dred{
+  color: darkred ;
+}
+
 .bgblack{
 background-color: black;
 }
@@ -39,3 +49,6 @@ border-top: 5px darkred solid;
 width:30%;
   border-bottom: 5px darkred solid;
 }
+
+
+
