@@ -5,9 +5,11 @@ var Voiture = require("../models/voiture");
 var voitureController = {};
 
 
-//----------------------
+//--------------------------------------
+
 // PARTIE FRONT
-//----------------------
+
+//---------------------------------------
 
 //Lister les voitures et les affiche dans la page d'accueil
 voitureController.listaccueil = function (req, res) {
@@ -33,11 +35,15 @@ voitureController.show = function (req, res) {
     });
 };
 
-//----------------------
-// PARTIE BACK
-//----------------------
+//-----------------------------------------------------------------------
 
+// PARTIE BACK
+
+//-----------------------------------------------------------------------
+
+//--------------------------------------
 //Lister les voitures et les affiche dans l'index du Back office
+//--------------------------------------
 voitureController.list = function (req, res) {
     Voiture.find({}).exec(function (err, voitures) {
         if (err) {
@@ -47,12 +53,16 @@ voitureController.list = function (req, res) {
         }
     });
 };
+//--------------------------------------
 //Redirection vers la page de creation d'une voiture
+//--------------------------------------
 voitureController.create = function (req, res) {
     res.render("../views/voiture/admin/create");
 };
+//--------------------------------------
 // fonction de vérification des données vides
- function verifChampVide(champs){
+//--------------------------------------
+ function verifChampsVide(champs){
 
     var condition =true ;
     for (var i = 0 ; i < champs.length ; i++){
@@ -63,8 +73,9 @@ voitureController.create = function (req, res) {
         return condition
 
 }
-
+//------------------------------
 //Enregistrement d'une voiture
+//------------------------------
 voitureController.save = function (req, res) {
     var voiture = new Voiture(req.body);
     var info = [req.body.marque, 
@@ -78,8 +89,11 @@ voitureController.save = function (req, res) {
         req.body.places, 
         req.body.actif]
 
-    var verif= verifChampVide(info)
+//appel de la fonction verifChampsVide dans la variable verif
+
+    var verif= verifChampsVide(info)
      
+    
         if (verif == true){ 
 
             voiture.save(function (err) {
@@ -104,8 +118,10 @@ voitureController.save = function (req, res) {
 };
 
 
-
+//--------------------------------------
 //Edition d'un voiture par son id
+//--------------------------------------
+
 voitureController.edit = function (req, res) {
     var voiture = new Voiture(req.body);
 
@@ -117,8 +133,10 @@ voitureController.edit = function (req, res) {
         }
     });
 };
-
+//--------------------------------------
 //Gestion de l'edition dun voiture
+//--------------------------------------
+
 voitureController.update = function (req, res) {
     Voiture.findByIdAndUpdate(req.params.id, {
         $set: {
