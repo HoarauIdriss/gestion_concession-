@@ -5,6 +5,7 @@ body {
 
 a {
   color: #00B7FF;
+  text-transform: uppercase;
 }
 
  /*format uppercase sur les gros titres*/
