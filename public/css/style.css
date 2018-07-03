@@ -13,7 +13,8 @@ h5 {
   text-transform: uppercase;
 }
 h1 {
-  text-transform: uppercase;
+  text-transform: uppercase; 
+  
 }
 
 
@@ -29,3 +30,5 @@ h1 {
 .color-grey{
   color: lightgray;
 }
+
+
