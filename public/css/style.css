@@ -31,6 +31,13 @@ h1 {
   color: lightgray;
 }
 
+.bg-grey{
+  background-color: lightgray;
+}
+.color-dred{
+  color: darkred ;
+}
+
 .bgblack{
 background-color: black;
 }

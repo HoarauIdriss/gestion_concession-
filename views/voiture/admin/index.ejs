@@ -1,11 +1,12 @@
 <% include ../../partials/head.ejs %>
  <% include ../../partials/header.ejs %>
+
     <!--pour le lien "a", contient le lien vers la page "create"-->
-    <h1 class="text-center mb-5 pb-2 border-bottom-red mx-auto">Gestion des voitures </h1>
+    <h1 class="text-center mb-5 pb-2 border-bottom-red mx-auto" >Gestion des voitures </h1>
     
     <!-- NE PAS AJOUTER DE type="button" sur un a quand il y a bootstrap de charger -->
     <!-- Il génère une difference entre chrome et firefox -->
-    <p><a href="/voitures/admin/create" class="btn btn-dark btn-block py-3"> <i class="far fa-plus-square color-grey mx-2"></i>  Ajouter </a></p>
+    <div class="container-fluid bg-dark p-3 d-flex justify-content-center  "><a href="/voitures/admin/create" class="btn btn-danger p-50 py-3 mb-2  "> <i class="far fa-plus-square color-grey mx-2"></i>  Ajouter voiture </a></div>
     <table class="table table-striped table-light">
       <thead class="table-dark">
         <tr>
@@ -37,17 +38,36 @@
             <td><%= voiture.portes %></td>
             <td><%= voiture.places %></td>
             <td><% if(voiture.actif == "on"){ %>
-              OUI
+             <span class="text-success font-weight-bold"> OUI </span>
               <% }else{ %>
-              NON
+                <span class="text-danger">  NON </span>
               <% } %>
             </td>
             <!--bouton qui édite dans la derniere colonne-->
-            <td><a href="/voitures/admin/edit/<%= voiture._id%>" class="btn btn-outline-dark">Editer</a> </td>
+            <td><a href="/voitures/admin/edit/<%= voiture._id%>" class="btn btn-outline-dark"> <i class="far fa-edit"></i> Editer</a> </td>
           </tr>
         <% }); %>
 
       </tbody>
     </table>
+    <div class="container d-flex justify-content-center"> <a href="#top" id="toTop" class="  justify-content-center" >   <i class="fas fa-chevron-circle-up fa-5x  p-5 color-dred"></i> </a>  </div>
   
+  <script>
+    (function() {
+      $(window).scroll(function() {
+  if ($(this).scrollTop() > 100) {
+		$('i').fadeIn();
+	} else {
+	  $('i').fadeOut();
+	}
+});
+      $('a[href^="#"]').click(function(){
+	var the_id = $(this).attr("href");
+	$('html,body').animate({
+		scrollTop:$(the_id).offset().top
+	}, 'slow');
+	return false;
+});
+})
+  </script>
     <% include ../../partials/footer.ejs %>
