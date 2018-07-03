@@ -1,6 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
+var multer  = require('multer');
+var app = express();
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, __dirname + "/../public/img/")
+    },
+    filename: function (req, file, cb) {
+      let extArray = file.mimetype.split("/");
+      let extension = extArray[extArray.length - 1];
+      console.log(file.mimetype);
+      cb(null, file.originalname)
+    }
+  });
+  
+var upload = multer({ storage: storage });
+
 var voiture = require("../controllers/voitureController");
 
 //recuperer les voitures
@@ -18,7 +34,7 @@ router.get("/admin/create", voiture.create);
 
 //sauvegarder une voiture. /!\ cest un POST 
 //Ajouter une voiture dans la Collection
-router.post("/admin/save", voiture.save);
+router.post("/admin/save",upload.single('image'), voiture.save);
 
 //editer une voiture
 //Afficher une page pour éditer un voiture

@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-
+/**
+ * Création du modèle pour la base de données pour la collections "voitures"
+ */
 var VoitureSchema = new mongoose.Schema({
     marque: String,
     modele: String,
