@@ -4,7 +4,7 @@
     <header>
         <% include ./partials/header.ejs %>
     </header>
-    <div class="container bg-light border-top-red mb-5 pb-5">
+    <div class="container bg-light border-top-red mb-5 pb-5 mt-3">
     <!-- NE PAS AJOUTER DE type="button" sur un a quand il y a bootstrap de charger -->
     <!-- Il génère une difference entre chrome et firefox -->
         <a href="voitures/admin/"  class="btn btn-dark mt-3 text-uppercase">Administration </a>
@@ -29,6 +29,11 @@
             <%  }); %>
         </div>
     </div>
-    
+    <div class="image">
+        <img src="/img/widget21.png">
+        <div id="note">
+            4.8/5
+        </div>
+    </div>
 <% include ./partials/footer.ejs %>
 

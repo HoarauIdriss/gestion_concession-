@@ -31,6 +31,13 @@ h1 {
   color: lightgray;
 }
 
+.bg-grey{
+  background-color: lightgray;
+}
+.color-dred{
+  color: darkred ;
+}
+
 .bgblack{
 background-color: black;
 }
@@ -38,10 +45,41 @@ background-color: black;
 border-top: 5px darkred solid;
 
 }
+.border-red{
+  border: 5px rgb(82, 23, 23) solid;
+  
+  }
+
+  .border-bt-grey{
+    border-bottom: 5px rgb(53, 51, 51) solid;
+    
+    }
 .border-bottom-red{
 width:30%;
   border-bottom: 5px darkred solid;
 }
 
+.image{
+  position: relative;
+  top: 92px;
+  left: 150px;
+}
+
+#note{
+  position: absolute;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  line-height: 1;
+  font-weight: normal;
+  width: 97px;
+  height: 41px;
+  font-size: 43px;
+  top: 61px;
+  left: 137px;
+}
 
 
+header{
+background-image: url("/img/speed-1249610_1920.jpg");
+height: 200px;
+}
