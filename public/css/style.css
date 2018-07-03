@@ -24,11 +24,24 @@ h1 {
 
 .img-fluid-1 {
 
-  height: 400px !important;
+  height: 450px !important;
 }
 
 .color-grey{
   color: lightgray;
 }
+
+.bgblack{
+background-color: black;
+}
+.border-top-red{
+border-top: 5px darkred solid;
+
+}
+.border-bottom-red{
+width:30%;
+  border-bottom: 5px darkred solid;
+}
+
 
 

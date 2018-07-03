@@ -4,10 +4,10 @@
     <header>
         <% include ./partials/header.ejs %>
     </header>
-    <div class="container bg-light">
+    <div class="container bg-light border-top-red mb-5 pb-5">
     <!-- NE PAS AJOUTER DE type="button" sur un a quand il y a bootstrap de charger -->
     <!-- Il génère une difference entre chrome et firefox -->
-        <a href="voitures/admin/"  class="btn btn-dark mt-3">Administration </a>
+        <a href="voitures/admin/"  class="btn btn-dark mt-3 text-uppercase">Administration </a>
         <h1 class="text-center p-5">Accueil</h1>
         <div class="row mx-auto">
             <% voitures.forEach(function(voiture){ %>
@@ -21,7 +21,7 @@
                                     <!--J'appel ma fonction, qui est dans script.js-->
                                 <%=voiture.prix %> EUR
                                 </div>
-                                <a href="voitures/show/<%= voiture._id %> "  class="btn btn-danger mt-3">Voir plus</a>
+                                <a href="voitures/show/<%= voiture._id %> "  class="btn btn-danger mt-3 text-uppercase">Voir plus</a>
                             </div>
                         </div>
                     </div>
