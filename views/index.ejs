@@ -6,12 +6,12 @@
     <div class="container bg-light">
     <!-- NE PAS AJOUTER DE type="button" sur un a quand il y a bootstrap de charger -->
     <!-- Il génère une difference entre chrome et firefox -->
-        <a href="voitures/admin/"  class="btn btn-dark mt-3">Admin</a>
+        <a href="voitures/admin/"  class="btn btn-dark mt-3">Administration </a>
         <h1 class="text-center p-5">Accueil</h1>
-        <div class="row">
+        <div class="row mx-auto">
             <% voitures.forEach(function(voiture){ %>
                 <% if (voiture.actif === "on"){%> 
-                    <div class="col-md-4 pb-3 pt-3">
+                    <div class="col-md-4 pb-3 pt-3 ">
                         <div class="card" style="width: 18rem;">
                             <img src="<%= voiture.image %>" class="card-img-top img-fluid">
                             <div class="card-body text-center">

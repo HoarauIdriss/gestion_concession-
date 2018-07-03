@@ -1,7 +1,8 @@
 <% include ../../partials/head.ejs %>
-  <div class="container">
-  <a href="/voitures/admin"  class="btn btn-dark mt-5">Accueil administration</a>
-    <form action="/voitures/admin/update/<%= voiture._id %>" method="POST" class="needs-validation" novalidate>
+<div class="container-fluid bg-dark">
+  <div class="container bg-light p-5">
+  <a href="/voitures/admin"  class="btn btn-dark my-3 ">Accueil administration</a>
+    <form action="/voitures/admin/update/<%= voiture._id %>" method="POST" class="needs-validation bg-light p-5" novalidate>
       <div class="form-group mt-2">
         <h1 for="">Editer une voiture</h1>
         <div class="form-row">
@@ -82,7 +83,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Editer</button>
     </form>
-  </div><script>
+  </div> </div><script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
