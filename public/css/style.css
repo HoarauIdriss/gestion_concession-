@@ -34,6 +34,10 @@ h1 {
 .bg-grey{
   background-color: lightgray;
 }
+
+.bg-red{
+  background-color: #F20715;
+}
 .color-dred{
   color: darkred ;
 }
@@ -92,4 +96,7 @@ img.card-img-top.img-fluid{
 
 img.card-img-top.img-fluid:hover{
   transform: scale(1.05);
+}
+.input-width {
+  width: 50px;
 }

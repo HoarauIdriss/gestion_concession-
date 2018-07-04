@@ -185,5 +185,8 @@ voitureController.update = async function (req, res) {
     });
 };
 
+
+
+
 //Export du module
 module.exports = voitureController;
