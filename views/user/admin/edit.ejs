@@ -3,7 +3,7 @@
 <div class="container-fluid bg-dark p-5">
     <div class="container bg-light border-top-red p-5 ">
     <a href="/users/admin"  class="btn btn-dark my-3">Accueil administration</a>
-    <form action="/users/admin/save" method="POST" class="needs-validation p-5" novalidate >
+    <form action="/users/admin/update" method="POST" class="needs-validation p-5" novalidate >
        <div class="form-group mt-2">
        <h1 for="">Editer un utilisateur</h1>
        <div class="form-row">
@@ -28,7 +28,7 @@
          <div class="invalid-feedback">
           ajouter la puissance
         </div>
-       </div>
+      <!-- </div>
        <div class="form-group">
          <label for="droit">Droit</label>
          <select class="form-control mt-2" name="droit"  id="droit">
@@ -36,7 +36,8 @@
            <option value="1" <% if (user.droit == "1"){ %> selected <% } %> >Gestionnaire</option>
            <option value="2" <% if (user.droit == "2"){ %> selected <% } %> >Administrateur</option>
          </select>
-       </div>
+       </div> -->
+       <input type="hidden" name="droit" id="droit" value="<% if (user.droit){ %> <%= user.droit %> <% } else {%>0<% } %> " required>
       </div>
       <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>

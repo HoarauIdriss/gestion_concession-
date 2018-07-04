@@ -14,11 +14,11 @@
                                 </h3>
                             </div>
                             <div class="panel-body">
-                                <form role="form " class="needs-validation" novalidate>
+                                <form role="form" action="/users/admin/save" method="POST" class="needs-validation" novalidate>
                                     <div class="form-group">
 
                                         <div class="form-group">
-                                            <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Username" required>
+                                            <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Username" required>
                                             <div class="invalid-feedback text-left">
                                                 Entrez votre "username"
                                             </div>
@@ -54,7 +54,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <input type="hidden" name="droit" id="droit" value="0" required>
                                     <button type="submit" value="Register" class="btn btn-danger btn-block"> REGISTER</button>
 
                                 </form>
