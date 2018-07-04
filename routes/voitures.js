@@ -23,6 +23,8 @@ var upload = multer({ storage: storage });
 /* GET home page. */
 router.get('/', voiture.listaccueil )
 
+
+
 //recuperer les voitures
 //Afficher la page d'accueil ou il y aura la liste des voitures actives
 //Récupérer la liste des voitures depuis la Collection
