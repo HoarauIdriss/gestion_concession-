@@ -83,3 +83,13 @@ header{
 background-image: url("/img/speed-1249610_1920.jpg");
 height: 200px;
 }
+.card{
+  overflow: hidden;
+}
+img.card-img-top.img-fluid{
+  transition: 0.5s linear;
+}
+
+img.card-img-top.img-fluid:hover{
+  transform: scale(1.05);
+}
