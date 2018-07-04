@@ -128,7 +128,7 @@ voitureController.save = function (req, res) {
 
 voitureController.edit = function (req, res) {
     var voiture = new Voiture(req.body);
-    var verif= verifChampsVide(info);
+   // var verif= verifChampsVide(info);
     var info = [req.body.marque, 
         req.body.modele, 
         req.body.image, 
@@ -139,7 +139,7 @@ voitureController.edit = function (req, res) {
         req.body.portes, 
         req.body.places, 
         req.body.actif]
-
+    var verif =true ;
 
     if (verif == true){ 
 

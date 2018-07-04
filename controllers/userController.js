@@ -77,7 +77,7 @@ userController.save = function (req, res) {
 
     var verif= verifChampsVide(info)
      
-    res.redirect("/users/admin");
+   // res.redirect("/users/admin");
         if (verif == true){ 
 
             user.save(function (err) {
@@ -110,12 +110,12 @@ userController.save = function (req, res) {
 
 userController.edit = function (req, res) {
     var user = new User(req.body);
-    var verif= verifChampsVide(info);
+   // var verif= verifChampsVide(info);
     var info = [req.body.email, 
         req.body.username, 
         req.body.password, 
         req.body.droit]
-
+     var   verif = true;
 
     if (verif == true){ 
 

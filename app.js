@@ -3,6 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// Librairie pour crypter des données => ici pour le mot de passe
+var bcrypt = require('bcrypt');
+// Librairie pour gerer les session utilisateurs
+var session = require('express-session')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -30,6 +34,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/voitures', voituresRouter);
+
+// utilise des sessions pour le suivi des connexions 
+app.use (session ({ 
+  secret: 'No pain no gain', 
+  resave: true, 
+  saveUninitialized: false 
+}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
