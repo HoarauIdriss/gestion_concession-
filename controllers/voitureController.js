@@ -128,20 +128,7 @@ voitureController.save = function (req, res) {
 
 voitureController.edit = function (req, res) {
     var voiture = new Voiture(req.body);
-    var verif= verifChampsVide(info);
-    var info = [req.body.marque, 
-        req.body.modele, 
-        req.body.image, 
-        req.body.puissance, 
-        req.body.motorisation,
-        req.body.prix, 
-        req.body.couleur, 
-        req.body.portes, 
-        req.body.places, 
-        req.body.actif]
-
-
-    if (verif == true){ 
+   
 
     Voiture.findOne({ _id: req.params.id }).exec(function (err, voiture) {
         if (err) {
@@ -150,10 +137,10 @@ voitureController.edit = function (req, res) {
             res.render("../views/voiture/admin/edit", { voiture: voiture });
         }
     });
-    }else{  res.render("../views/voiture/admin/edit")
+    
 
 
-    }
+    
 };
 //--------------------------------------
 //Gestion de l'edition dun voiture

@@ -6,6 +6,7 @@
             <% include ./partials/header-index.ejs %>
         </header>
         <div class="container bg-light border-top-red mb-5 pb-5 mt-3">
+            <a href="/users/create" class="btn btn-success mt-3"> Sign in</a>
             <h1 class="text-center mt-5 pb-3  border-bottom-red mx-auto">Accueil</h1>
 
 
@@ -17,7 +18,7 @@
                         <div class="panel panel-info ">
                             <div class="panel-heading">
                                 <div class="panel-title">
-                                    <h3 class="text-left text-uppercase"> Connexion </h3>
+                                    <h3 class="text-center text-uppercase"> Connexion </h3>
                                 </div>
                             </div>
 
@@ -39,9 +40,9 @@
 
                                     <div style="margin-bottom: 25px" class="input-group">
                                         <span class="">
-                                                <i class="fas fa-lock mr-3 mt-3 color-dred p-2 fa-2x"></i>
+                                            <i class="fas fa-lock mr-3 mt-3 color-dred p-2 fa-2x"></i>
                                         </span>
-                                   <!--  INPUT POUR ENTRER LE MOT DE PASSE -->     
+                                        <!--  INPUT POUR ENTRER LE MOT DE PASSE -->
                                         <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required>
                                         <div class="invalid-feedback text-center">
                                             Entrez votre mot de passe
@@ -64,7 +65,7 @@
                                         <div class="col-md-12 control">
                                             <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
                                                 Don't have an account!
-                                                <a href="#">
+                                                <a href="/users/create">
                                                     Sign Up Here
                                                 </a>
                                             </div>

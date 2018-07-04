@@ -2,7 +2,7 @@
 <% include ../../partials/header.ejs %>
 <div class="container-fluid bg-dark p-5">
     <div class="container bg-light border-top-red p-5 ">
-    <a href="/voitures/admin"  class="btn btn-dark my-3"> Page inscription </a>
+    <a href="/voitures/admin"  class="btn btn-dark my-3">Accueil administration</a>
     <form action="/voitures/admin/save" method="POST" class="needs-validation p-5" novalidate enctype="multipart/form-data">
        <div class="form-group mt-2">
        <h1 for="">Ajouter une voiture</h1>
@@ -86,3 +86,32 @@
       <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
     </div> </div>
+<script>
+  // Validation des champs du formulaire via JavaScript
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          $('#image').val($('#file-image').prop('files')[0].name);
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          // verification du poids de l'image
+
+          if ($('#image').prop('files')[0].size > 2000000) {
+            event.preventDefault();
+            event.stopPropagation();
+            alert("fichier trop volumineux");
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+<% include ../../partials/footer.ejs %>
