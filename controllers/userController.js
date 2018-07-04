@@ -46,7 +46,7 @@ userController.list = function (req, res) {
 //Redirection vers la page de creation d'une user
 //--------------------------------------
 userController.create = function (req, res) {
-    res.render("../views/user/admin/create");
+    res.render("../views/user/admin/createuser");
 };
 //--------------------------------------
 // fonction de vérification des données vides

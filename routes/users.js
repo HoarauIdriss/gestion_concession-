@@ -16,9 +16,9 @@ router.get("/admin", user.list);
 //Récupérer une voiture depuis la collection selon son ID
 router.get("/show/:id", user.show);
 
-//cree une voiture
-//Afficher une page pour ajouter un voiture
-router.get("/admin/create", user.create);
+//cree un utilisateur
+//Afficher une page pour inscrire les utilisateurs
+router.get("/create", user.create);
 
 //sauvegarder une voiture. /!\ cest un POST 
 //Ajouter une voiture dans la Collection
