@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var voiture = require("../controllers/voitureController");
+// var voiture = require("../controllers/voitureController");
 
 /* GET home page. */
-router.get('/', voiture.listaccueil )
+router.get('/',function (req,res){
+    res.render("index");
+});
 
 
 

@@ -18,7 +18,7 @@ voitureController.listaccueil = function (req, res) {
         if (err) {
             console.log('Error : ', err);
         } else {
-            res.render("index", { voitures: voitures });
+            res.render("voiture/index", { voitures: voitures });
         }
     });
 };
