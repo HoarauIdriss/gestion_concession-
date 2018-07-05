@@ -4,8 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
+
 // Librairie pour crypter des données => ici pour le mot de passe
 var bcrypt = require('bcrypt');
+
 // Librairie pour gerer les session utilisateurs
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);

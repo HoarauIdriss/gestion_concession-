@@ -1,5 +1,9 @@
 <% include ../../partials/head.ejs %>
     <% include ../../partials/header.ejs %>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+  
+
         <div class="container-fluid bg-dark p-5">
             <div class="container bg-light border-top-red p-5 ">
                 <a href="/" class="btn btn-success"> Retourner au login</a>
@@ -56,15 +60,21 @@
                                     </div>
                                     <input type="hidden" name="droit" id="droit" value="0" required>
                                     <button type="submit" value="Register" class="btn btn-danger btn-block"> REGISTER</button>
-
+                                    
                                 </form>
+                                <div class="g-recaptcha mt-5 " data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                                
+
                             </div>
+                            
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
         </div>
+        
         <script>
                 // Validation des champs du formulaire via JavaScript
                 (function () {
@@ -87,4 +97,8 @@
                     }, false);
                 })();
             </script>
+
+            
+            
+            
         <% include ../../partials/footer.ejs %>

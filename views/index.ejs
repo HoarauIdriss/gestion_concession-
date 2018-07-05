@@ -5,6 +5,14 @@
         <header>
             <% include ./partials/header-index.ejs %>
         </header>
+
+            <!--*****************************************-->
+
+            <!-- PAGE ACCUEIL LOGIN UTILISATEUR & ADMIN  -->
+
+            <!--*****************************************-->
+
+
         <div class="container bg-light border-top-red mb-5 pb-5 mt-3">
             <a href="/users/create" class="btn btn-success mt-3"> Sign in</a>
             <h1 class="text-center mt-5 pb-3  border-bottom-red mx-auto">Accueil</h1>
@@ -18,12 +26,14 @@
                         <div class="panel panel-info ">
                             <div class="panel-heading">
                                 <div class="panel-title">
-                                    <h3 class="text-center text-uppercase"> Connexion </h3>
+                                    <h3 class="text-center text-uppercase"> Veuillez-vous connecter </h3>
                                 </div>
                             </div>
 
                             <div style="padding-top:30px" class="panel-body">
 
+                                
+                                <!-- FORMULAIRE POUR LOGIN DES UTILSATEURS -->
                                 <form id="loginform" action="/users/login" method="POST" class="form-horizontal needs-validation p-5" novalidate role="form">
 
                                     <div style="margin-bottom: 25px" class="input-group">
@@ -52,7 +62,7 @@
 
                                     <div style="margin-top:10px" class="form-group">
 
-                                        <!-- Button -->
+                                        <!-- BUTTON SUBMIT LOGIN -->
                                         <div class="col-sm-12 controls">
                                             <button type="submit" class="btn btn-danger text-uppercase">Login </button>
 
@@ -65,6 +75,7 @@
                                         <div class="col-md-12 control">
                                             <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
                                                 Don't have an account!
+                                                 <!--  REDIRECTION PAGE INSCRIPTION  -->
                                                 <a href="/users/create">
                                                     Sign Up Here
                                                 </a>
@@ -77,8 +88,11 @@
                     </div>
                 </div>
             </div>
-            <a href="/voitures/">Accéder à la liste</a>
+   
         </div>
+
+
+        
         <script>
             // Validation des champs du formulaire via JavaScript
             (function () {

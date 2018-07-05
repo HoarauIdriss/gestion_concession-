@@ -2,25 +2,18 @@ var mongoose = require('mongoose');
 var express = require('express');
 var app = express();
 var User = require("../models/user");
-// var session = require('express-session');
-
-// // utilise des sessions pour le suivi des connexions 
-// app.use (session ({ 
-//     secret: 'No pain no gain', 
-//     resave: true, 
-//     saveUninitialized: false 
-//   }));
 
 
 var userController = {};
 
 
-//--------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 
-// PARTIE FRONT
+// PARTIE AUTHENTIFICATION LOGIN 
 
-//---------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 
+// permet de se logger dans une session 
 userController.login =  function (req,res){
     if (req.body.loginemail && req.body.loginpassword) {
         User.authenticate(req.body.loginemail, req.body.loginpassword, function (error, user) {
@@ -43,7 +36,7 @@ userController.login =  function (req,res){
       }
 }
 
-//Affiche une user par rapport à son ID
+// permet de se déconnecter de sa session
 userController.logout = function (req, res) {
     if (req.session) {
         // delete session object
@@ -58,26 +51,19 @@ userController.logout = function (req, res) {
       }
 };
 
-//Affiche une user par rapport à son ID
-userController.show = function (req, res) {
-    User.findOne({ _id: req.params.id }).exec(function (err, user) {
-        if (err) {
-            console.log('Error : ', err);
-        } else {
-            res.render("../views/user/viewdetails", { user: user });
-        }
-    });
-};
 
-//-----------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// PARTIE BACK
+// PARTIE EDITION DES UTILISATEURS
 
-//-----------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 //--------------------------------------
 //Lister les users et les affiche dans l'index du Back office
 //--------------------------------------
+
 userController.list = function (req, res) {
     User.find({}).exec(function (err, users) {
         if (err) {
@@ -90,12 +76,14 @@ userController.list = function (req, res) {
 //--------------------------------------
 //Redirection vers la page de creation d'une user
 //--------------------------------------
+
 userController.create = function (req, res) {
     res.render("../views/user/admin/createuser");
 };
 //--------------------------------------
 // fonction de vérification des données vides
 //--------------------------------------
+
  function verifChampsVide(champs){
 
     var condition =true ;
@@ -107,6 +95,7 @@ userController.create = function (req, res) {
         return condition
 
 }
+
 //------------------------------
 //Enregistrement d'une user
 //------------------------------
@@ -147,12 +136,33 @@ userController.save = function (req, res) {
 
 };
 
+//***************************************************************** */
+// TO DO : afficher les détails des utilisateur dans une page 
+//***************************************************************** */
+// //Affiche une user par rapport à son ID
+// userController.show = function (req, res) {
+//     User.findOne({ _id: req.params.id }).exec(function (err, user) {
+//         if (err) {
+//             console.log('Error : ', err);
+//         } else {
+//             res.render("../views/user/viewdetails", { user: user });
+//         }
+//     });
+// };
+
+//******************************************************************* */
+
+
+
+//************************************************************************* */
+//  TO DO : finir la partie édition des données utilisateurs  
+
+//************************************************************************ */
+
 
 //--------------------------------------
 //Edition d'un user par son id
 //--------------------------------------
-
-
 
 userController.edit = function (req, res) {
     var user = new User(req.body);
@@ -177,6 +187,8 @@ userController.edit = function (req, res) {
 
     }
 };
+
+
 //--------------------------------------
 //Gestion de l'edition dun user
 //--------------------------------------
@@ -200,6 +212,11 @@ userController.update = async function (req, res) {
 
     });
 };
+
+
+//************************************************************************* */
+//
+//************************************************************************ */
 
 //Export du module
 module.exports = userController;
