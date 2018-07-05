@@ -12,12 +12,14 @@ var bcrypt = require('bcrypt');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var app = express();
+var urlDB = process.env.MONGO;//var avec la base mongo
 
 //connection à la base de données
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost/Idriss')
+//mongodb://<dbuser>:<dbpassword>@ds127851.mlab.com:27851/simplon-voitures
+// mongoose.connect('mongodb://localhost/Idriss')
+mongoose.connect(urlDB)
   .then(() =>  console.log('connection succesful'))
 
 var db = mongoose.connection;
