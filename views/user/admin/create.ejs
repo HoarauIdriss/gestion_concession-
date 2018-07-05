@@ -3,20 +3,20 @@
 <div class="container-fluid bg-dark p-5">
     <div class="container bg-light border-top-red p-5 ">
     <a href="/users/admin"  class="btn btn-dark my-3">Accueil administration</a>
-    <form action="/users/admin/update" method="POST" class="needs-validation p-5" novalidate >
+    <form action="/users/admin/save" method="POST" class="needs-validation p-5" novalidate >
        <div class="form-group mt-2">
-       <h1 for="">Editer un utilisateur</h1>
+       <h1 for="">Ajouter un utilisateur</h1>
        <div class="form-row">
          <div class="form-group col-md-6">
            <label for="email">Email</label>
-           <input type="email" class="form-control mt-2" name="email" value="<%= user.email %>" id="email" aria-describedby="" placeholder=""  >
+           <input type="email" class="form-control mt-2" name="email" id="email" aria-describedby="" placeholder=""  >
            <div class="invalid-feedback">
             ajouter la marque
           </div>
          </div>
          <div class="form-group col-md-6">
            <label for="username">username</label>
-           <input type="text" class="form-control mt-2" name="username" value="<%= user.username %>"  id="username" aria-describedby="" placeholder=""  >
+           <input type="text" class="form-control mt-2" name="username" id="username" aria-describedby="" placeholder=""  >
            <div class="invalid-feedback">
             ajouter le modèle
           </div>
@@ -24,20 +24,19 @@
        </div>
        <div class="form-group">
          <label for="password">password</label>
-         <input type="password" class="form-control mt-2" name="password" value="<%= user.password %>"  id="password"  min="1" max="15" aria-describedby="" placeholder=""   >
+         <input type="password" class="form-control mt-2" name="password" id="password"  min="1" max="15" aria-describedby="" placeholder=""   >
          <div class="invalid-feedback">
           ajouter la puissance
         </div>
-      <!-- </div>
+       </div>
        <div class="form-group">
          <label for="droit">Droit</label>
          <select class="form-control mt-2" name="droit"  id="droit">
-           <option value="0" <% if (user.droit == "0"){ %> selected <% } %> >Utilisateur</option>
-           <option value="1" <% if (user.droit == "1"){ %> selected <% } %> >Gestionnaire</option>
-           <option value="2" <% if (user.droit == "2"){ %> selected <% } %> >Administrateur</option>
+           <option value="0">Utilisateur</option>
+           <option value="1">Gestionnaire</option>
+           <option value="2">Administrateur</option>
          </select>
-       </div> -->
-       <input type="hidden" name="droit" id="droit" value="<% if (user.droit){ %> <%= user.droit %> <% } else {%>0<% } %> " required>
+       </div>
       </div>
       <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
