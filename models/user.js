@@ -27,7 +27,7 @@ var UserSchema = new mongoose.Schema({
     }
   });
 
-//authenticate input against database
+//Fonction d'authentification recherche et comparaison du mot de pass via bcrypt
 UserSchema.statics.authenticate = function (email, password, callback) {
     User.findOne({ email: email })
       .exec(function (err, user) {
