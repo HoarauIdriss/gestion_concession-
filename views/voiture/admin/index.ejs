@@ -1,6 +1,13 @@
 <% include ../../partials/head.ejs %>
  <% include ../../partials/header.ejs %>
 
+     <!--******************************************************-->
+
+    <!-- PAGE ADMIN  LISTE DE TOUTES LES VOITURES DANS  LA BASE DE DONNEE  -->
+
+    <!--******************************************************-->
+
+
     <!--pour le lien "a", contient le lien vers la page "create"-->
     <h1 class="text-center mb-5 mt-5 pb-2 border-bottom-red mx-auto" > <i class="fas fa-car color-dred mr-3"></i>Gestion des voitures </h1>
     
@@ -23,6 +30,8 @@
           <th scope="col"></th>
         </tr>
       </thead>
+
+      
       <tbody>
         <% voitures.forEach(function(voiture){ %>
           <tr>
