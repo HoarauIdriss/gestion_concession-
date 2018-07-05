@@ -23,10 +23,21 @@ var upload = multer({ storage: storage });
 /* GET home page. */
 router.get('/', voiture.listaccueil )
 
+
+function requiresLogin(req, res, next) {
+  if (req.session && req.session.userId) {
+     next();
+  } else {
+    var err = new Error('You must be logged in to view this page.');
+    err.status = 401;    
+    res.redirect('/');
+  }
+}
+
 //recuperer les voitures
 //Afficher la page d'accueil ou il y aura la liste des voitures actives
 //Récupérer la liste des voitures depuis la Collection
-router.get("/admin", voiture.list);
+router.get("/admin", requiresLogin , voiture.list);
 
 //voir une voiture par son id
 //Récupérer une voiture depuis la collection selon son ID
@@ -34,7 +45,7 @@ router.get("/show/:id", voiture.show);
 
 //cree une voiture
 //Afficher une page pour ajouter un voiture
-router.get("/admin/create", voiture.create);
+router.get("/admin/create", requiresLogin , voiture.create);
 
 //sauvegarder une voiture. /!\ cest un POST 
 //Ajouter une voiture dans la Collection
@@ -43,7 +54,7 @@ router.post("/admin/save", upload.single('file-image'), voiture.save);
 
 //editer une voiture
 //Afficher une page pour éditer un voiture
-router.get("/admin/edit/:id", voiture.edit);
+router.get("/admin/edit/:id", requiresLogin , voiture.edit);
 
 //edit update.  /!\ cest un POST 
 //Mettre à jour une voiture de la Collection
