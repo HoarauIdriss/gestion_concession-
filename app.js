@@ -9,14 +9,27 @@ var logger = require('morgan');
 var bcrypt = require('bcrypt');
 
 // Librairie pour gerer les session utilisateurs
-var session = require('express-session')
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var app = express();
+
+//connection à la base de données
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+mongoose.connect('mongodb://localhost/Idriss')
+  .then(() =>  console.log('connection succesful'))
+
+var db = mongoose.connection;
 
 // utilise des sessions pour le suivi des connexions 
 app.use (session ({ 
   secret: 'No pain no gain', 
   resave: true, 
-  saveUninitialized: false 
+  saveUninitialized: false , 
+  store: new MongoStore({
+    mongooseConnection: db
+  })
 }));
 
 var indexRouter = require('./routes/index');
@@ -28,12 +41,6 @@ var voituresRouter = require('./routes/voitures');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//connection à la base de données
-var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost/Idriss')
-  .then(() =>  console.log('connection succesful'))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
