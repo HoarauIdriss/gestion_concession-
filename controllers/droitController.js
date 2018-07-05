@@ -6,14 +6,8 @@ var Droit = require("../models/droit");
 var droitController = {};
 
 
-//--------------------------------------
 
-// PARTIE FRONT
-
-//---------------------------------------
-
-
-//Affiche une droit par rapport à son ID
+//Affiche un droit par rapport à son ID
 droitController.show = function (req, res) {
     Droit.findOne({ _id: req.params.id }).exec(function (err, droit) {
         if (err) {
@@ -24,11 +18,6 @@ droitController.show = function (req, res) {
     });
 };
 
-//-----------------------------------------------------------------------
-
-// PARTIE BACK
-
-//-----------------------------------------------------------------------
 
 //--------------------------------------
 //Lister les droits et les affiche dans l'index du Back office
