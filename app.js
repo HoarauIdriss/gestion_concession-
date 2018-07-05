@@ -20,7 +20,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/Idriss')
   .then(() =>  console.log('connection succesful'))
 
-  var db = mongoose.connection;
+var db = mongoose.connection;
+
 // utilise des sessions pour le suivi des connexions 
 app.use (session ({ 
   secret: 'No pain no gain', 

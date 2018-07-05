@@ -7,7 +7,7 @@
 
       
     <a href="/users/admin"  class="btn btn-dark my-3">Accueil administration</a>
-    <form action="/users/admin/update" method="POST" class="needs-validation p-5" novalidate >
+    <form action="/users/admin/update/<%= user._id %>" method="POST" class="needs-validation p-5" novalidate >
        <div class="form-group mt-2">
        <h1 for="">Editer un utilisateur</h1>
        <div class="form-row">
@@ -43,7 +43,7 @@
        </div> -->
        <input type="hidden" name="droit" id="droit" value="<% if (user.droit){ %> <%= user.droit %> <% } else {%>0<% } %> " required>
       </div>
-      <button type="submit" class="btn btn-primary">Ajouter</button>
+      <button type="submit" class="btn btn-primary">Editer</button>
     </form>
     </div> </div>
 <script>

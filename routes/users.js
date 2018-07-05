@@ -17,7 +17,7 @@ router.get("/admin", user.list);
 
 //voir un utilisateur par son ID 
 //Récupérer une voiture depuis la collection selon son ID
-router.get("/show/:id", user.show);
+// router.get("/show/:id", user.show);
 
 //cree un utilisateur
 //Afficher une page pour inscrire les utilisateurs
